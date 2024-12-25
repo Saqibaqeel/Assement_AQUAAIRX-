@@ -1,0 +1,70 @@
+<%layout('/layouts/boilerPlate')%>
+
+
+
+<body class="container my-5">
+  <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="border p-4 rounded shadow-lg" style="max-width: 600px; width: 100%;">
+      <h1 class="mb-4 text-center text-primary">Filter Destinations</h1>
+      <form action="/destination/prefer" method="POST">
+        <div class="mb-4">
+          <label class="form-label text-secondary">Category:</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="category" value="Beach" id="beach">
+            <label class="form-check-label" for="beach">
+              <i class="fas fa-sun fa-2x text-warning"></i> Beach
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="category" value="Mountains" id="mountains">
+            <label class="form-check-label" for="mountains">
+              <i class="fas fa-mountain fa-2x text-info"></i> Mountains
+            </label>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label text-secondary">Budget:</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="budget" value="Low" id="low">
+            <label class="form-check-label" for="low">
+              <i class="fas fa-wallet fa-2x text-success"></i> Low
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="budget" value="Medium" id="medium">
+            <label class="form-check-label" for="medium">
+              <i class="fas fa-wallet fa-2x text-warning"></i> Medium
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="budget" value="High" id="high">
+            <label class="form-check-label" for="high">
+              <i class="fas fa-wallet fa-2x text-danger"></i> High
+            </label>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label text-secondary">Type:</label><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="type" value="Relaxation" id="relaxation">
+            <label class="form-check-label" for="relaxation">
+              <i class="fas fa-bed fa-2x text-muted"></i> Relaxation
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="type" value="Adventure" id="adventure">
+            <label class="form-check-label" for="adventure">
+              <i class="fas fa-hiking fa-2x text-success"></i> Adventure
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-outline-primary btn-lg w-100">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>

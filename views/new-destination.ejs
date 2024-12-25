@@ -1,0 +1,107 @@
+<%layout('/layouts/boilerPlate')%>
+<body class="bg-light " >
+  <div class="container d-flex justify-content-center align-items-center height-60% mb-5">
+    <div class="card shadow p-4" style="width: 100%; max-width: 500px;">
+      <h2 class="text-center text-primary mb-4">Post Your  Destination</h2>
+      <form id="destinationForm" class="needs-validation" novalidate method="post" action="/destination/add_new_destination">
+        <!-- Title -->
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="Enter destination title" required>
+          <div class="invalid-feedback">Title is required.</div>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea class="form-control" id="description" name="description" rows="3" placeholder="Write a brief description" required></textarea>
+          <div class="invalid-feedback">Description is required.</div>
+        </div>
+
+        <!-- Image URL -->
+        <div class="mb-3">
+          <label for="image" class="form-label">Image URL</label>
+          <input type="url" class="form-control" id="image" name="image[url]" placeholder="https://example.com/image.jpg" required>
+          <div class="invalid-feedback">A valid image URL is required.</div>
+        </div>
+
+        <!-- Price -->
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input type="number" class="form-control" id="price" name="price" min="0" placeholder="Enter price in USD" required>
+          <div class="invalid-feedback">Price is required and must be a non-negative number.</div>
+        </div>
+
+        <!-- Location -->
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input type="text" class="form-control" id="location" name="location" placeholder="Enter the location" required>
+          <div class="invalid-feedback">Location is required.</div>
+        </div>
+
+        <!-- Country -->
+        <div class="mb-3">
+          <label for="country" class="form-label">Country</label>
+          <input type="text" class="form-control" id="country" name="country" placeholder="Enter the country" required>
+          <div class="invalid-feedback">Country is required.</div>
+        </div>
+
+        <!-- Category Dropdown -->
+        <div class="mb-3">
+          <label for="category" class="form-label">Category</label>
+          <select class="form-select" id="category" name="category" required>
+            <option value="" disabled selected>Select category</option>
+            <option value="Beach">Beach</option>
+            <option value="Mountains">Mountains</option>
+          </select>
+          <div class="invalid-feedback">Category is required.</div>
+        </div>
+
+        <!-- Budget Dropdown -->
+        <div class="mb-3">
+          <label for="budget" class="form-label">Budget</label>
+          <select class="form-select" id="budget" name="budget" required>
+            <option value="" disabled selected>Select budget</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <div class="invalid-feedback">Budget is required.</div>
+        </div>
+
+        <!-- Type Dropdown -->
+        <div class="mb-3">
+          <label for="type" class="form-label">Type</label>
+          <select class="form-select" id="type" name="type" required>
+            <option value="" disabled selected>Select type</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Relaxation">Relaxation</option>
+          </select>
+          <div class="invalid-feedback">Type is required.</div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100">Create Destination</button>
+      </form>
+    </div>
+  </div>
+
+  
+  <script>
+    // Bootstrap validation
+    (function () {
+      'use strict';
+      const forms = document.querySelectorAll('.needs-validation');
+      Array.from(forms).forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    })();
+  </script>
+</body>
+</html>
